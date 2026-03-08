@@ -37,7 +37,6 @@ TramAI is an intelligent, AI-driven urban traffic management and commute plannin
 - **[Hybrid decision fusion with multi-source context](https://openrouter.ai/)** — The `HybridIntelligence` component in the frontend contrasts two signal optimization approaches: (1) Max-Pressure baseline ensures local throughput maximization via vehicle queue calculations, (2) ML augmentation adds contextual decisions via LLMs analyzing live event data, weather forecasts, and historical patterns. Decisions are fused in `intelligence.py` using weighted scoring, allowing the system to override Max-Pressure when high confidence context (e.g., stadium event with 50k+ attendance forecast) suggests alternative phasing is optimal.
 
 - **[Web scraping and RAG-based venue indexing](https://www.crummy.com/software/BeautifulSoup/)** — The `BACKEND-WEBSCRAPER/` module uses Beautiful Soup to parse HTML from DuckDuckGo search results for live event discovery. Extracted snippets feed into `rag.py`'s retrieval-augmented generation pipeline, building an in-memory or Redis-backed index of venue names, event dates, expected attendance, and historical traffic patterns. When a commuter queries a venue, the RAG system retrieves matching events and context, improving the LLM's venue analysis accuracy.
-![Commute Report Example](images/telegram.jpeg) ![Bot Traffic Query Example](images/WhatsApp.jpeg)
 
 ## Technologies & Libraries
 
@@ -268,6 +267,7 @@ Traffic patterns in Indian cities differ from Western models:
 | Shourya Wikhe | 
 | Arhant Bagde | 
 | Vinit Shirbhate | 
+
 
 
 
