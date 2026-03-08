@@ -4,7 +4,7 @@ An intelligent, AI-driven urban traffic management and commute planning platform
 
 ## Overview
 
-Blue-BIT-PCCOE is a full-stack application that integrates computer vision-based vehicle counting, LLM-powered event intelligence, and hybrid signal control algorithms. It serves commuters with adaptive route planning while providing city administrators with comprehensive traffic network monitoring and optimization tools.
+This is a full-stack application that integrates computer vision-based vehicle counting, LLM-powered event intelligence, and hybrid signal control algorithms. It serves commuters with adaptive route planning while providing city administrators with comprehensive traffic network monitoring and optimization tools.
 
 ## Features
 
@@ -266,8 +266,56 @@ Traffic patterns in Indian cities differ from Western models:
 
 Implemented in `frontend/components/atcs/IndiaCentricAdaptation.tsx` and `services/` configuration constants.
 
+
 ## Screenshots & Assets
 
-*[Screenshots section — add images demonstrating route planning UI, live traffic overlays, ATCS visualizations, and admin dashboard]*
+Below are the screenshots currently present in the `screenshots/` folder. They are embedded here so visitors can quickly scan the product visuals.
+
+Landing / Hero:
+
+![Landing Hero](screenshots/WhatsApp Image 2026-02-28 at 10.34.48.jpeg)
+
+Route planning and options (Fastest / Balanced):
+
+![Route Options](screenshots/Screenshot 2026-02-27 141419.png)
+
+Problem statement / motivation slide:
+
+![Problem Statement](screenshots/Screenshot 2026-02-27 212921.png)
+
+Example commute report (WhatsApp preview):
+
+![Commute Report](screenshots/Screenshot 2026-02-27 223232.png)
+
+IMCC / Location dashboard (per-venue insights):
+
+![IMCC Dashboard](screenshots/Screenshot 2026-02-28 094819.png)
+
+City-wide Road Intelligence map (overview):
+
+![City Road Intelligence](screenshots/Screenshot 2026-02-28 094833.png)
+
+Satellite / 3D Road View:
+
+![Satellite View](screenshots/Screenshot 2026-03-08 211245.png)
+
+
+### Rename suggestion (optional)
+
+If you prefer friendlier filenames for these screenshots, run the following commands from the repository root. They will rename the files locally and stage the changes for commit.
+
+```
+git mv "screenshots/Screenshot 2026-02-27 141419.png" screenshots/route_options.png
+git mv "screenshots/Screenshot 2026-02-27 212921.png" screenshots/problem_statement.png
+git mv "screenshots/Screenshot 2026-02-27 223232.png" screenshots/commute_report_whatsapp.png
+git mv "screenshots/Screenshot 2026-02-28 094819.png" screenshots/imcc_dashboard.png
+git mv "screenshots/Screenshot 2026-02-28 094833.png" screenshots/city_road_intelligence.png
+git mv "screenshots/Screenshot 2026-03-08 211245.png" screenshots/satellite_view.png
+git mv "screenshots/WhatsApp Image 2026-02-28 at 10.34.48.jpeg" screenshots/landing_hero.jpeg
+```
+
+If you want me to perform the rename and commit the changes, I can do that — but I need the repository to be a git working copy (I attempted earlier and detected no active `.git` in the environment). If you run the commands above locally, I can then update this README to reference the new filenames (or do it here after you confirm the rename).
+
+
 
 
