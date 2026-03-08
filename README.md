@@ -4,7 +4,7 @@ An intelligent, AI-driven urban traffic management and commute planning platform
 
 ## Overview
 
-Blue-BIT-PCCOE is a full-stack application that integrates computer vision-based vehicle counting, LLM-powered event intelligence, and hybrid signal control algorithms. It serves commuters with adaptive route planning while providing city administrators with comprehensive traffic network monitoring and optimization tools.
+This is a full-stack application that integrates computer vision-based vehicle counting, LLM-powered event intelligence, and hybrid signal control algorithms. It serves commuters with adaptive route planning while providing city administrators with comprehensive traffic network monitoring and optimization tools.
 
 ## Features
 
@@ -269,5 +269,6 @@ Implemented in `frontend/components/atcs/IndiaCentricAdaptation.tsx` and `servic
 ## Screenshots & Assets
 
 *[Screenshots section — add images demonstrating route planning UI, live traffic overlays, ATCS visualizations, and admin dashboard]*
+
 
 
