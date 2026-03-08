@@ -3,8 +3,8 @@
 An intelligent, AI-driven urban traffic management and commute planning platform for Pune. Tram.AI combines real-time vehicle detection, dynamic traffic signal optimization, and venue-aware congestion forecasting to reduce commute times and improve traffic flow across the city.
 
 ## Overview
-
-This is a full-stack application that integrates computer vision-based vehicle counting, LLM-powered event intelligence, and hybrid signal control algorithms. It serves commuters with adaptive route planning while providing city administrators with comprehensive traffic network monitoring and optimization tools.
+![Problem Statement](images/PS-Describe.png)
+Blue-BIT-PCCOE is an intelligent, AI-driven urban traffic management and commute planning platform for Pune. It integrates real-time vehicle detection, dynamic traffic signal optimization, and venue-aware congestion forecasting to reduce commute times and improve traffic flow across the city. The platform combines computer vision, machine learning, and large language models to deliver adaptive route planning for commuters and comprehensive traffic network monitoring for city administrators. It features cross-modal integration of buses, metros, ride-shares, and walking paths, along with sustainability indicators and a mobile PWA interface.
 
 ## Features
 
@@ -26,8 +26,6 @@ This is a full-stack application that integrates computer vision-based vehicle c
 
 - **[Asynchronous request handling](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)** — FastAPI leverages async/await patterns throughout the application stack. Services like `ai_service.py`, `geo_service.py`, and `weather_service.py` make non-blocking I/O calls to external APIs (OpenRouter, Nominatim, weather providers) without blocking request threads. Uvicorn's worker pool handles concurrent requests, enabling the system to manage thousands of commute queries simultaneously while waiting for upstream API responses. Redis acts as both a cache layer (reducing redundant calls) and an async job broker for background tasks like video processing and event data ingestion.
 
-- **[CORS middleware](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)** — Applied globally in `app/main.py` to allow cross-origin requests from the Next.js frontend (potentially deployed on different origins), enabling commuter-facing features and admin dashboards to communicate securely with the backend API. Configuration allows credentials and wildcard headers, standard for SPA-to-API communication patterns.
-
 - **[Real-time object detection via YOLO](https://github.com/ultralytics/ultralytics)** — The `VideoProcessor` class in `backend/services/video_processor.py` loads YOLOv8n (nano variant for edge device compatibility) and processes traffic camera feeds at 1-second intervals. Detection output includes bounding boxes with confidence scores. Post-processing classifies detected objects into four categories (cars, motorcycles, buses, trucks), calculates per-lane queue depths, and computes pressure metrics (vehicles upstream minus downstream) that feed directly into the Max-Pressure signal optimization algorithm. Weighted scoring at multiple time horizons (1s, 10s, 60s) provides robust vehicle counts resistant to frame-by-frame noise.
 
 - **[Server-side rendering with React Server Components](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/The_terminal#client-side_vs_server-side_rendering)** — Next.js 16 pages in `frontend/app/` use App Router with Server Components by default. This architecture allows the frontend to offload traffic state computation to the server (via calls to `app/services/`), reducing client-side JavaScript and enabling dynamic route suggestions based on live congestion data before page hydration. Client-side interactive components like route maps and ATCS visualizations (`frontend/components/atcs/`) hydrate lazily using dynamic imports.
@@ -39,6 +37,7 @@ This is a full-stack application that integrates computer vision-based vehicle c
 - **[Hybrid decision fusion with multi-source context](https://openrouter.ai/)** — The `HybridIntelligence` component in the frontend contrasts two signal optimization approaches: (1) Max-Pressure baseline ensures local throughput maximization via vehicle queue calculations, (2) ML augmentation adds contextual decisions via LLMs analyzing live event data, weather forecasts, and historical patterns. Decisions are fused in `intelligence.py` using weighted scoring, allowing the system to override Max-Pressure when high confidence context (e.g., stadium event with 50k+ attendance forecast) suggests alternative phasing is optimal.
 
 - **[Web scraping and RAG-based venue indexing](https://www.crummy.com/software/BeautifulSoup/)** — The `BACKEND-WEBSCRAPER/` module uses Beautiful Soup to parse HTML from DuckDuckGo search results for live event discovery. Extracted snippets feed into `rag.py`'s retrieval-augmented generation pipeline, building an in-memory or Redis-backed index of venue names, event dates, expected attendance, and historical traffic patterns. When a commuter queries a venue, the RAG system retrieves matching events and context, improving the LLM's venue analysis accuracy.
+![Commute Report Example](images/telegram.jpeg) ![Bot Traffic Query Example](images/WhatsApp.jpeg)
 
 ## Technologies & Libraries
 
@@ -47,7 +46,6 @@ This is a full-stack application that integrates computer vision-based vehicle c
 - [React 19](https://react.dev/) — UI composition with hooks and context for state management.
 - [Tailwind CSS 4](https://tailwindcss.com/) — Utility-first CSS framework for rapid component styling.
 - [TypeScript 5](https://www.typescriptlang.org/) — Static type checking for JavaScript.
-- [Lucide React](https://lucide.dev/) — Lightweight SVG icon library for UI components.
 
 **Backend:**
 - [FastAPI 0.115](https://fastapi.tiangolo.com/) — Modern Python web framework with automatic OpenAPI documentation.
@@ -69,11 +67,6 @@ This is a full-stack application that integrates computer vision-based vehicle c
 - [PostGIS](https://postgis.net/) — Spatial database extension for geographic queries.
 - [Redis](https://redis.io/) — In-memory data store for caching predictions and broker for async job queues.
 - [python-dotenv 1.0](https://github.com/theskumar/python-dotenv) — Environment variable management for API keys and configuration.
-
-**Utilities:**
-- [Requests 0.27](https://requests.readthedocs.io/) — HTTP client for external API calls.
-- [Cachetools 5.4](https://cachetools.readthedocs.io/) — Decorator-based caching for reducing redundant API calls.
-- [Pytest 7+](https://pytest.org/) — Testing framework for unit and integration tests.
 
 ## Project Structure
 
@@ -183,6 +176,7 @@ When a commuter searches for a venue or the scraper detects a nearby event:
 Results displayed in `frontend/components/dashboard/` showing affected roads, time windows, and recommended rerouting. Confidence levels indicate model certainty.
 
 ### Adaptive Traffic Signal Control (ATCS)
+![ATC DashBoard](images/ATC.png)
 A three-layer hybrid intelligence system:
 
 **Layer 1: Max-Pressure Baseline**
@@ -207,6 +201,7 @@ A three-layer hybrid intelligence system:
 Results published to dashboard in real-time. Performance metrics tracked: average delay, intersection saturations, emergency vehicle compliance.
 
 ### Real-Time Vehicle Detection
+![Emergency](images/emergency.png)
 CCTV/traffic camera feeds streamed into `backend/services/video_processor.py`:
 - YOLOv8n model (6.3MB, runs on edge hardware) detects vehicles per frame
 - Classifies into 4 categories: cars, buses, motorcycles, trucks
@@ -217,6 +212,7 @@ CCTV/traffic camera feeds streamed into `backend/services/video_processor.py`:
 Detections stored in time-series database (or Redis Streams) for historical analysis and ML model training. Dashboard heatmaps display real-time vehicle distribution across the traffic network.
 
 ### Congestion Forecasting
+
 ML pipeline predicts traffic patterns for next 1-24 hours:
 - **Data inputs** — Historical traffic patterns, weather forecasts, public events, holidays, day-of-week effects
 - **Model** — scikit-learn ensemble (Random Forest + Gradient Boosting) trained on Pune traffic data
