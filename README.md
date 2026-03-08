@@ -7,13 +7,20 @@ An intelligent, AI-driven urban traffic management and commute planning platform
 Blue-BIT-PCCOE is a full-stack application that integrates computer vision-based vehicle counting, LLM-powered event intelligence, and hybrid signal control algorithms. It serves commuters with adaptive route planning while providing city administrators with comprehensive traffic network monitoring and optimization tools.
 
 ## Features
-1.⁠ ⁠Smart Commute Planner — fastest, balanced and scenic route options with live traffic overlays
-2.⁠ ⁠Dynamic Congestion Forecasting — ML-driven forecasts and hourly heatmaps
-3.⁠ ⁠Venue & Event Intelligence — event impact estimation and crowd routing
-4.⁠ ⁠Cross‑modal Integration — buses, metros, ride‑shares, walking paths
-5.⁠ ⁠Admin Dashboard — network health, advisories, incident management
-6.⁠ ⁠Mobile PWA — lightweight commuter interface
-7.⁠ ⁠Sustainability Indicators — fuel & emissions estimates per trip
+
+1. **Smart Commute Planner** – Provides fastest, balanced, and scenic route options with live traffic overlays.
+
+2. **Dynamic Congestion Forecasting** – Uses ML-driven predictions to forecast traffic congestion with hourly heatmaps.
+
+3. **Venue & Event Intelligence** – Estimates event impact on traffic and suggests optimized crowd routing.
+
+4. **Cross-modal Integration** – Integrates buses, metros, ride-shares, and walking paths for seamless travel planning.
+
+5. **Admin Dashboard** – Displays network health, advisories, and tools for incident management.
+
+6. **Mobile PWA** – Lightweight Progressive Web App interface designed for commuters.
+
+7. **Sustainability Indicators** – Shows fuel consumption and emissions estimates for each trip.
 
 ## Key Techniques
 
@@ -262,4 +269,5 @@ Implemented in `frontend/components/atcs/IndiaCentricAdaptation.tsx` and `servic
 ## Screenshots & Assets
 
 *[Screenshots section — add images demonstrating route planning UI, live traffic overlays, ATCS visualizations, and admin dashboard]*
+
 
