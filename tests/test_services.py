@@ -34,3 +34,10 @@ def test_mappls_exists():
 def test_metro_exists():
     svc = MetroService()
     assert hasattr(svc, "get_nearby_stations")
+
+
+def test_ddg_exists():
+    from app.services.ddg_service import DuckDuckGoService
+
+    svc = DuckDuckGoService()
+    assert hasattr(svc, "search")

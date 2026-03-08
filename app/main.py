@@ -9,6 +9,7 @@ from app.services.geo_service import GeoService
 from app.services.mappls_service import MapplsService
 from app.services.metro_service import MetroService
 from app.services.weather_service import WeatherService
+from app.services.ddg_service import DuckDuckGoService
 
 logger = logging.getLogger("tram.api")
 app = FastAPI(title="Tram.AI - Services API")
@@ -19,6 +20,7 @@ geo_svc = GeoService()
 map_svc = MapplsService()
 metro_svc = MetroService()
 weather_svc = WeatherService()
+ddg_svc = DuckDuckGoService()
 
 
 class TextRequest(BaseModel):
@@ -37,6 +39,11 @@ class ReverseRequest(BaseModel):
 class RouteRequest(BaseModel):
 	origin: Tuple[float, float]  # (lat, lon)
 	dest: Tuple[float, float]
+
+
+class SearchRequest(BaseModel):
+	query: str
+	max_results: int = 10
 
 
 @app.get("/health")
@@ -82,6 +89,15 @@ def route(req: RouteRequest):
 		return map_svc.get_directions(req.origin, req.dest)
 	except Exception as e:
 		logger.exception("route failed")
+		raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/search")
+def search(req: SearchRequest):
+	try:
+		return {"results": ddg_svc.search(req.query, max_results=req.max_results)}
+	except Exception as e:
+		logger.exception("search failed")
 		raise HTTPException(status_code=500, detail=str(e))
 
 
