@@ -1,0 +1,91 @@
+--- Sending: Hi ---
+Status: 200
+<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>ð *Hey! Welcome to Tram.AI* ð¦
+
+I can help you with:
+  ðºï¸ *Commute planning* â type *go*
+  ðª *Area events &amp; traffic* â ask e.g.:
+       _"Any events near Swargate?"_
+       _"Traffic at Shivajinagar"_
+       _"Metro near Magarpatta"_
+
+What would you like to do?</Body></Message></Response>
+
+--- Sending: Go ---
+Status: 200
+<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>ð *Where are you starting from?*
+
+Type the area or landmark name.
+_Examples: Deccan Gymkhana, Pune Railway Station, Kothrud_</Body></Message></Response>
+
+--- Sending: Swargate ---
+Status: 200
+<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>â *Origin:* Swargate, Satara Road
+  ð Swargate (Purple Line) â 0.15 km
+  ð Mandai (Purple Line) â 1.06 km
+
+ð *Where do you want to go?*
+
+_Examples: Hinjewadi IT Park, Magarpatta City, Baner_</Body></Message></Response>
+
+--- Sending: Baner ---
+Status: 200
+<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>â *Destination:* Baner, Pune
+  ð Dapodi (Purple Line) â 3.97 km
+  ð Fugewadi (Purple Line) â 4.42 km
+
+ð£ï¸ Route: *Swargate, Satara Road* â *Baner, Pune*
+
+â±ï¸ *How many minutes do you have to reach?*
+_Just reply with a number. Example: 30_</Body></Message></Response>
+
+--- Sending: 45 ---
+Status: 200
+<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>ð¦ *Tram.AI Commute Report*
+âââââââââââââââââââââ
+ð© *From:* Swargate, Satara Road
+ð *To:* Baner, Pune
+ð *Time available:* 45 min
+
+ð¤ï¸ *Weather:* Clear Sky | 19.11Â°C
+
+ð *Live Traffic*
+  â¢ Congestion: *20/100* (Low)
+  â¢ Alert: *GREEN*
+  â¢ Peak: 08:00 â 10:00 â ï¸
+
+â¡ *Traffic Actions:*
+  â¢ Deploy traffic wardens at key intersections along Baner Road and Mumbai-Bangalore Highway to manage traffic flow and pedestrian crossings
+  â¢ Monitor traffic flow using live traffic cameras and adjust signal timings dynamically based on real-time conditions
+
+ð¢ *Advisories:*
+  â¹ï¸ Expect low traffic congestion on Baner Road and Mumbai-Bangalore Highway during the morning commute (08:00 - 10:00)
+  â¹ï¸ Consider using alternative routes or public transportation, such as the Dapodi metro station, to avoid delays
+
+ð¢ Clear roads! You're good to go.
+
+ââââââââââââââââââââââââ
+ðºï¸ *TRAVEL ITINERARY*
+ð *Swargate, Satara Road  â  Baner, Pune*
+
+ð *Option A: By Road*
+  Distance: ~4.44 km
+  Time: ~10 min
+  ð Directions: https://maps.google.com/?q=18.5642431,73.7768573(Baner,+Pune)
+
+ð *Option B: By Metro*
+  Step 1: Walk to *Swargate* (Purple Line)
+          ~1 min walk (0.15 km)
+          ð https://maps.google.com/?q=18.5,73.8578(Swargate+Metro)
+  Step 2: Board â *Dapodi* (18 min ride)
+  Step 3: Walk to destination
+          ~49 min walk (3.97 km)
+          ð https://maps.google.com/?q=18.5869,73.806(Dapodi+Metro)
+  Total by Metro: ~68 min
+
+ð¡ *Recommended: By Road* â metro adds extra walking time here.
+
+_Powered by Tram.AI â¢ 2026-02-28T08:25_
+
+_Type *hi* for another trip or ask any area question!_</Body></Message></Response>
+

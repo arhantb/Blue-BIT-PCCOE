@@ -1,6 +1,7 @@
 import logging
 from typing import Optional, Tuple
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
@@ -13,6 +14,8 @@ from app.services.ddg_service import DuckDuckGoService
 
 logger = logging.getLogger("tram.api")
 app = FastAPI(title="Tram.AI - Services API")
+
+load_dotenv()  # load environment variables from .env if present
 
 # instantiate shared service objects (singleton-like)
 ai_svc = AIService()

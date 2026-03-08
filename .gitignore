@@ -6,3 +6,4 @@ __pycache__
 chat_log.jsonl
 event_log.jsonl
 data/*
+/.env.example
