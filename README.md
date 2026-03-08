@@ -4,7 +4,7 @@ An intelligent, AI-driven urban traffic management and commute planning platform
 
 ## Overview
 ![Problem Statement](images/PS-Describe.png)
-Blue-BIT-PCCOE is an intelligent, AI-driven urban traffic management and commute planning platform for Pune. It integrates real-time vehicle detection, dynamic traffic signal optimization, and venue-aware congestion forecasting to reduce commute times and improve traffic flow across the city. The platform combines computer vision, machine learning, and large language models to deliver adaptive route planning for commuters and comprehensive traffic network monitoring for city administrators. It features cross-modal integration of buses, metros, ride-shares, and walking paths, along with sustainability indicators and a mobile PWA interface.
+TramAI is an intelligent, AI-driven urban traffic management and commute planning platform for Pune. It integrates real-time vehicle detection, dynamic traffic signal optimization, and venue-aware congestion forecasting to reduce commute times and improve traffic flow across the city. The platform combines computer vision, machine learning, and large language models to deliver adaptive route planning for commuters and comprehensive traffic network monitoring for city administrators. It features cross-modal integration of buses, metros, ride-shares, and walking paths, along with sustainability indicators and a mobile PWA interface.
 
 ## Features
 
@@ -259,6 +259,17 @@ Traffic patterns in Indian cities differ from Western models:
 - **Monsoon impact** — Weather models specifically calibrated for Indian monsoon (high rainfall, waterlogging)
 - **Festival and holiday patterns** — Calendar-aware congestion forecasts (Diwali, Ganesh Chaturthi, local events)
 - **Public transport subsidies** — Bus and metro encourage modal shift; route planner highlights cost-effective multi-modal options
+
+  ## 👥 Team — METAMASK
+
+| Name | 
+|------|
+| Vivek Latpate | 
+| Shourya Wikhe | 
+| Arhant Bagde | 
+| Vinit Shirbhate | 
+
+
 
 
 
