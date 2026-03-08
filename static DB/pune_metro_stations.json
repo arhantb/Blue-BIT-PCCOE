@@ -1,0 +1,253 @@
+{
+  "city": "Pune",
+  "system": "Pune Metro",
+  "operator": "Maha Metro",
+  "operating_hours": {
+    "first_train": "06:00",
+    "last_train": "23:00"
+  },
+  "common_features": {
+    "last_mile_options": [
+      "auto_rickshaw",
+      "bike_taxi",
+      "PMPML_bus"
+    ],
+    "amenities_common": [
+      "washroom",
+      "ticket_counter",
+      "security",
+      "elevator",
+      "wheelchair_access",
+      "tactile_paths"
+    ]
+  },
+  "stations": [
+    {
+      "name": "PCMC Bhavan",
+      "lat": 18.6298,
+      "lon": 73.7997,
+      "line": "Purple",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Sant Tukaram Nagar",
+      "lat": 18.6216,
+      "lon": 73.8026,
+      "line": "Purple",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Nashik Phata",
+      "lat": 18.6075,
+      "lon": 73.8072,
+      "line": "Purple",
+      "amenities": ["washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Kasarwadi",
+      "lat": 18.5933,
+      "lon": 73.8077,
+      "line": "Purple",
+      "amenities": ["washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Phugewadi",
+      "lat": 18.5866,
+      "lon": 73.8089,
+      "line": "Purple",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Bopodi",
+      "lat": 18.5702,
+      "lon": 73.8170,
+      "line": "Purple",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Khadki",
+      "lat": 18.5623,
+      "lon": 73.8214,
+      "line": "Purple",
+      "amenities": ["washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Shivaji Nagar",
+      "lat": 18.5307,
+      "lon": 73.8476,
+      "line": "Purple",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "interchange": true,
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Civil Court",
+      "lat": 18.5204,
+      "lon": 73.8567,
+      "line": "Interchange",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "interchange": true,
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Mandai",
+      "lat": 18.5136,
+      "lon": 73.8588,
+      "line": "Purple",
+      "amenities": ["washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Swargate",
+      "lat": 18.5018,
+      "lon": 73.8636,
+      "line": "Purple",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Vanaz",
+      "lat": 18.5082737,
+      "lon": 73.8020298,
+      "line": "Aqua",
+      "amenities": ["washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Ideal Colony",
+      "lat": 18.5107,
+      "lon": 73.8125,
+      "line": "Aqua",
+      "amenities": ["parking","washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Garware College",
+      "lat": 18.5167,
+      "lon": 73.8196,
+      "line": "Aqua",
+      "amenities": ["washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Pune Railway Station",
+      "lat": 18.5286,
+      "lon": 73.8740,
+      "line": "Aqua",
+      "amenities": ["washroom","ticket_counter","security"],
+      "intermodal": ["Indian Railways","PMPML"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    },
+    {
+      "name": "Ramwadi",
+      "lat": 18.5512,
+      "lon": 73.9127,
+      "line": "Aqua",
+      "amenities": ["washroom","ticket_counter","security"],
+      "live_data": {
+        "train_delay": null,
+        "next_train_eta": null,
+        "crowd_level": null,
+        "platform_number": null
+      },
+      "last_mile_options": ["auto_rickshaw","bike_taxi","PMPML_bus"]
+    }
+  ]
+}
