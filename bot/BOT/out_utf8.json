@@ -1,0 +1,80 @@
+﻿{
+    "analysis":  {
+                     "venue":  {
+                                   "name":  "IMCC Pune",
+                                   "type":  "College",
+                                   "capacity":  5000,
+                                   "address":  "Pune, Maharashtra"
+                               },
+                     "event_context":  {
+                                           "likely_event_today":  false,
+                                           "date":  "No specific date available",
+                                           "estimated_attendance":  "0",
+                                           "specific_details":  "No specific event details found"
+                                       },
+                     "traffic_prediction":  {
+                                                "severity":  "Low",
+                                                "congestion_index":  20,
+                                                "confidence":  60,
+                                                "peak_period":  {
+                                                                    "start":  "07:00",
+                                                                    "end":  "09:00",
+                                                                    "label":  "Morning Rush Hour",
+                                                                    "description":  "Expected traffic congestion due to regular college hours"
+                                                                }
+                                            },
+                     "impact_zones":  [
+                                          {
+                                              "radius":  1,
+                                              "level":  2,
+                                              "roads_affected":  "Internal college roads and surrounding areas"
+                                          }
+                                      ],
+                     "location":  {
+                                      "latitude":  18.514,
+                                      "longitude":  73.818
+                                  },
+                     "nearest_metro_station":  {
+                                                   "station_name":  "Ideal Colony (Aqua Line)",
+                                                   "distance_km":  0.67
+                                               },
+                     "weather":  {
+                                     "condition":  "Clear Sky",
+                                     "temperature_c":  16.63
+                                 },
+                     "mappls_live_traffic":  {
+                                                 "distance_km":  6.4,
+                                                 "travel_time_min":  11.4,
+                                                 "traffic_delay_min":  0,
+                                                 "average_speed_kmh":  33.7,
+                                                 "congestion_level":  "LOW"
+                                             },
+                     "timestamp":  "2026-02-28T07:38:45.412367"
+                 },
+    "decision":  {
+                     "decision_summary":  "Standard traffic protocols in effect.",
+                     "priority_level":  "low",
+                     "signal_actions":  [
+
+                                        ],
+                     "traffic_management_actions":  [
+                                                        "Monitor area for congestion."
+                                                    ],
+                     "public_advisories":  [
+                                               "No major advisories."
+                                           ],
+                     "risk_assessment":  {
+                                             "choke_probability":  0.1,
+                                             "crash_risk":  0.05,
+                                             "pedestrian_density":  "low"
+                                         },
+                     "map_visualization_flags":  {
+                                                     "highlight_event_zone":  false,
+                                                     "highlight_congestion":  false,
+                                                     "show_metro_option":  true,
+                                                     "alert_level":  "green"
+                                                 },
+                     "next_review_in_minutes":  30,
+                     "confidence":  0.5
+                 }
+}

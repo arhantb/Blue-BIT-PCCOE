@@ -1,0 +1,94 @@
+﻿{
+    "analysis":  {
+                     "venue":  {
+                                   "name":  "IMCC Pune",
+                                   "type":  "College",
+                                   "capacity":  5000,
+                                   "address":  "Pune, Maharashtra"
+                               },
+                     "event_context":  {
+                                           "likely_event_today":  "No",
+                                           "date":  "Current Date",
+                                           "estimated_attendance":  "0",
+                                           "specific_details":  "No specific event details found"
+                                       },
+                     "traffic_prediction":  {
+                                                "severity":  "Low",
+                                                "congestion_index":  20,
+                                                "confidence":  80,
+                                                "peak_period":  {
+                                                                    "start":  "07:00",
+                                                                    "end":  "09:00",
+                                                                    "label":  "Morning Rush Hour",
+                                                                    "description":  "Expected traffic congestion due to college hours"
+                                                                }
+                                            },
+                     "impact_zones":  [
+                                          {
+                                              "radius":  1,
+                                              "level":  2,
+                                              "roads_affected":  "Internal college roads and surrounding areas"
+                                          }
+                                      ],
+                     "location":  {
+                                      "latitude":  18.514,
+                                      "longitude":  73.818
+                                  },
+                     "nearest_metro_station":  {
+                                                   "station_name":  "Ideal Colony (Aqua Line)",
+                                                   "distance_km":  0.67
+                                               },
+                     "weather":  {
+                                     "condition":  "Clear Sky",
+                                     "temperature_c":  18.79
+                                 },
+                     "mappls_live_traffic":  {
+                                                 "distance_km":  6.4,
+                                                 "travel_time_min":  11.4,
+                                                 "traffic_delay_min":  0,
+                                                 "average_speed_kmh":  33.7,
+                                                 "congestion_level":  "LOW"
+                                             },
+                     "timestamp":  "2026-02-28T08:27:37.558200"
+                 },
+    "decision":  {
+                     "decision_summary":  "Manage low traffic around IMCC Pune during morning rush hour",
+                     "priority_level":  "low",
+                     "signal_actions":  [
+                                            {
+                                                "junction_area":  "Internal college roads and surrounding areas",
+                                                "east_west_green_time_sec":  40,
+                                                "north_south_green_time_sec":  30,
+                                                "reason":  "Adjust signal timings to manage traffic flow during morning rush hour"
+                                            }
+                                        ],
+                     "traffic_management_actions":  [
+                                                        "Deploy traffic wardens at key intersections along internal college roads and surrounding areas to manage traffic flow and pedestrian crossings",
+                                                        "Monitor traffic flow using live traffic cameras and adjust signal timings dynamically based on real-time conditions"
+                                                    ],
+                     "public_advisories":  [
+                                               "Expect low traffic congestion on internal college roads and surrounding areas during the morning rush hour (07:00 - 09:00)",
+                                               "Consider using alternative routes or public transportation, such as the Ideal Colony metro station, to avoid delays"
+                                           ],
+                     "suggested_reroute_waypoints":  [
+                                                         {
+                                                             "name":  "Ideal Colony",
+                                                             "lat":  18.514,
+                                                             "lon":  73.818
+                                                         }
+                                                     ],
+                     "risk_assessment":  {
+                                             "choke_probability":  0.05,
+                                             "crash_risk":  0.01,
+                                             "pedestrian_density":  "low"
+                                         },
+                     "map_visualization_flags":  {
+                                                     "highlight_event_zone":  false,
+                                                     "highlight_congestion":  true,
+                                                     "show_metro_option":  true,
+                                                     "alert_level":  "green"
+                                                 },
+                     "next_review_in_minutes":  30,
+                     "confidence":  0.8
+                 }
+}
