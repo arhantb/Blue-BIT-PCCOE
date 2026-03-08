@@ -1,59 +1,61 @@
-import os
 import logging
-from typing import Tuple, Dict, Any
+import requests
+from app.core.config import settings
 
-import httpx
+logger = logging.getLogger("MapplsService")
 
-logger = logging.getLogger(__name__)
+def get_mappls_token():
+    url = "https://outpost.mappls.com/api/security/oauth/token"
+    payload = {
+        "grant_type": "client_credentials",
+        "client_id": settings.MAPPLS_CLIENT_ID,
+        "client_secret": settings.MAPPLS_CLIENT_SECRET,
+    }
+    headers = {"Content-Type": "application/x-www-form-urlencoded"}
 
+    try:
+        response = requests.post(url, data=payload, headers=headers, timeout=10)
+        data = response.json()
+        return data.get("access_token")
+    except Exception as e:
+        logger.error(f"Token request exception: {str(e)}")
+        return None
 
-class MapplsService:
-	"""Routing helper with MapPLS (MapMyIndia) best-effort support and OSRM
-	fallback.
+def fetch_mappls_traffic(lat: float, lon: float):
+    token = get_mappls_token()
+    if not token:
+        logger.warning("Missing Mappls token.")
+        return None
 
-	`get_directions(origin, dest)` returns a normalized dictionary with keys:
-	- `distance_m`, `duration_s`, `geometry` (geojson), `raw` (original response)
-	"""
+    dest_lat, dest_lon = lat + 0.02, lon + 0.02
+    url = f"https://apis.mappls.com/advancedmaps/v1/{token}/route_adv/driving/{lon},{lat};{dest_lon},{dest_lat}"
+    params = {"traffic": "true", "steps": "false", "resource": "route_eta"}
 
-	OSRM_URL = "http://router.project-osrm.org/route/v1/driving"
+    try:
+        response = requests.get(url, params=params, timeout=10)
+        data = response.json()
+        if response.status_code != 200 or not data.get("routes"):
+            return None
 
-	def __init__(self, api_key: str = None):
-		self.api_key = api_key or os.getenv("MAPPLS_API_KEY")
+        route = data["routes"][0]
+        distance_km = route.get("distance", 0) / 1000
+        duration_min = route.get("duration", 0) / 60
+        duration_no_traffic = route.get("duration_without_traffic", route.get("duration", 0)) / 60
+        delay_min = max(0, duration_min - duration_no_traffic)
+        avg_speed = distance_km / (duration_min / 60) if duration_min else 0
 
-	def _normalize_osrm(self, resp_json: Dict[str, Any]) -> Dict[str, Any]:
-		routes = resp_json.get("routes") or []
-		if not routes:
-			return {"distance_m": 0, "duration_s": 0, "geometry": None, "raw": resp_json}
-		r = routes[0]
-		return {"distance_m": r.get("distance"), "duration_s": r.get("duration"), "geometry": r.get("geometry"), "raw": resp_json}
+        congestion = "LOW"
+        if delay_min > 10: congestion = "CRITICAL"
+        elif delay_min > 5: congestion = "HIGH"
+        elif delay_min > 2: congestion = "MODERATE"
 
-	def _osrm_route(self, origin: Tuple[float, float], dest: Tuple[float, float]) -> Dict[str, Any]:
-		lon1, lat1 = origin[1], origin[0]
-		lon2, lat2 = dest[1], dest[0]
-		url = f"{self.OSRM_URL}/{lon1},{lat1};{lon2},{lat2}"
-		params = {"overview": "full", "geometries": "geojson", "steps": "true"}
-		resp = httpx.get(url, params=params, timeout=10.0)
-		resp.raise_for_status()
-		return self._normalize_osrm(resp.json())
-
-	def get_directions(self, origin: Tuple[float, float], dest: Tuple[float, float]) -> Dict[str, Any]:
-		if self.api_key:
-			try:
-				lon1, lat1 = origin[1], origin[0]
-				lon2, lat2 = dest[1], dest[0]
-				url = f"https://apis.mappls.com/advancedmaps/v1/{self.api_key}/route"
-				params = {"start": f"{lat1},{lon1}", "end": f"{lat2},{lon2}", "return": "geojson"}
-				resp = httpx.get(url, params=params, timeout=12.0)
-				resp.raise_for_status()
-				data = resp.json()
-				# Attempt to normalize vendor response if it follows common shapes
-				if isinstance(data, dict) and "routes" in data:
-					return self._normalize_osrm(data)
-				return {"distance_m": None, "duration_s": None, "geometry": data, "raw": data}
-			except Exception:
-				logger.exception("MapPLS request failed; falling back to OSRM")
-
-		return self._osrm_route(origin, dest)
-
-
-__all__ = ["MapplsService"]
+        return {
+            "distance_km": round(distance_km, 2),
+            "travel_time_min": round(duration_min, 1),
+            "traffic_delay_min": round(delay_min, 1),
+            "average_speed_kmh": round(avg_speed, 1),
+            "congestion_level": congestion
+        }
+    except Exception as e:
+        logger.error(f"Traffic fetch exception: {str(e)}")
+        return {"error": str(e), "congestion_level": "UNKNOWN"}
